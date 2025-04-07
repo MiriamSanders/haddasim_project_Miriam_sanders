@@ -18,8 +18,8 @@ function AddItem({ goods, setGoods, setAdd }) {
     }
     return (<>
         <input placeholder="item name" name="name" onChange={handleChange} />
-        <input placeholder="minimal amount" name="min" onChange={handleChange} />
-        <input placeholder="price" name="price" onChange={handleChange} />
+        <input placeholder="minimal amount" name="min" onChange={handleChange} type="number"/>
+        <input placeholder="price" name="price" onChange={handleChange} type="number"/>
         <button onClick={submitNewGood}>add</button>
     </>)
 }

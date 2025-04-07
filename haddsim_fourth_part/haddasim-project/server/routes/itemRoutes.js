@@ -31,7 +31,6 @@ router.put('/minimalitems', (req, res) => {
 //אתגר
 router.post('/placeorder', (req, res) => {
     const { items } = req.body;
-    console.log(items)
     const minimalUpdateSql = 'UPDATE  minimal_items SET current_amount = current_amount - ? WHERE item_name = ?'
 
     Object.entries(items).forEach(([itemName, quantity]) => {
@@ -40,8 +39,6 @@ router.post('/placeorder', (req, res) => {
                 console.error('Error updating minimal_amount:', err);
                 return res.status(500).json({ error: "Failed to update some items" });
             }
-
-            console.log(`Minimal amount for ${itemName} updated successfully.`);
         });
     });
     const sqlDiffrence = 'SELECT item_name, minimal_amount, current_amount, (minimal_amount - current_amount) AS amount_difference FROM minimal_items WHERE current_amount < minimal_amount';
