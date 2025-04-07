@@ -66,12 +66,12 @@ router.post('/placeorder', (req, res) => {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(orderObj),
                 });
-                if (response) {
-                   res.status(200).json({message:"seccessfuly updated and current stock, and ordered relevent items"})
-                }
+
             })
 
         });
+
+        res.status(200).json({ message: "seccessfuly updated and current stock, and ordered relevent items" })
 
 
     }

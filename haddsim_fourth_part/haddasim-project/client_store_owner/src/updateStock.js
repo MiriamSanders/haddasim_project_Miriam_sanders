@@ -7,3 +7,4 @@ export async function checkout(json_buy) {
     });
 
 }
+checkout({"suger":1,"milk":2})
