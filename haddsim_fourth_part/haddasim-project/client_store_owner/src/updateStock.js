@@ -5,6 +5,12 @@ export async function checkout(json_buy) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: json_buy }),
     });
+    const result=await response.json();
+    if (response.ok) {
+        console.log(result.message);
+    }
+    else
+       { console.log(result.error)}
 
 }
-checkout({"suger":1,"milk":2})
+checkout({ "bla":2})

@@ -85,7 +85,6 @@ router.get('/orders', (req, res) => {
 });
 router.post('/orders', (req, res) => {
     const { supplier, date, items } = req.body;
-    console.log(req.body)
     const orderItemsSql = 'INSERT INTO order_items (order_id, item_Id, amount) VALUES (?, ?, ?)';
     const ordersSql = 'INSERT INTO orders (supplier_id, date, status) VALUES (?, ?, ?)';
     const minimalSql = 'UPDATE minimal_items SET current_amount = current_amount + ? WHERE item_name = (SELECT item_name FROM items WHERE id = ? LIMIT 1)';

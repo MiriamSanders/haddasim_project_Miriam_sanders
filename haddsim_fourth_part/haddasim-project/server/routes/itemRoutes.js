@@ -31,13 +31,15 @@ router.put('/minimalitems', (req, res) => {
 //אתגר
 router.post('/placeorder', (req, res) => {
     const { items } = req.body;
-    const minimalUpdateSql = 'UPDATE  minimal_items SET current_amount = current_amount - ? WHERE item_name = ?'
-
+    const minimalUpdateSql = 'UPDATE  minimal_items SET current_amount = current_amount - ? WHERE item_name = ?';
+    console.log(items)
+    let statusSet = false;
     Object.entries(items).forEach(([itemName, quantity]) => {
         db.query(minimalUpdateSql, [quantity, itemName], (err, result) => {
-            if (err) {
-                console.error('Error updating minimal_amount:', err);
-                return res.status(500).json({ error: "Failed to update some items" });
+            if (result.affectedRows == 0) {
+                //  console.error('Error updating minimal_amount:', err);
+                statusSet = true;
+                return res.status(400).json({ error: "some of the items are not supplied by any of the suppliers" });
             }
         });
     });
@@ -67,8 +69,8 @@ router.post('/placeorder', (req, res) => {
             })
 
         });
-
-        res.status(200).json({ message: "seccessfuly updated and current stock, and ordered relevent items" })
+        if (!statusSet)
+            res.status(200).json({ message: "successfully updated current stock, and ordered relevant items" })
 
 
     }
