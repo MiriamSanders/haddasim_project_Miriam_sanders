@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+div{
+  left: 30%;
+}
+body{
+  background-image: url("../src/images/flower-8820894_1920.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.view_order{
+  background-color: #b0afaf;
+   border-radius:10px;
+   padding-bottom: 3px;
+   width: 30vw;
+}

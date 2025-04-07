@@ -1,0 +1,72 @@
+
+.register-form {
+    width: 25vw;
+    /* height: 25vw; */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 20px 30px 60px #000;
+    position: sticky;
+    left:30%;
+    margin: auto;
+}
+
+input {
+    width: 17vw;
+    height: 1.5vw;
+    background: #b0afaf;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin: 20px auto;
+    border-radius: 7px;
+}
+
+input:focus {
+    border-color: rgb(62, 61, 61);
+    border-width: 0.15vw;
+    border-style: solid;
+}
+
+.register-button {
+    width: 18vw;
+    height: 3vw;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #2c2b2b;
+    background: #b0afaf;
+    border: none;
+    font-size: 1vw;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    position: relative;
+}
+
+.register-input {
+    width: 18vw;
+    height: 2.75vw;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #2c2b2b;
+    background: #b0afaf;
+    font-size: 1.25vw;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 1.4vw;
+}
+
+.user-name{
+    margin-top: 3.5vw;
+}
