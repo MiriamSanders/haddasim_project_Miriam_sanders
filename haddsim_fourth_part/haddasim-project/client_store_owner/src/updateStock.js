@@ -13,4 +13,4 @@ export async function checkout(json_buy) {
        { console.log(result.error)}
 
 }
-checkout({ "bla":2})
+checkout({ "sara":20})

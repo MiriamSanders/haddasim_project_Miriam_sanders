@@ -1,6 +1,4 @@
 import pandas as pd
-import time
-import  os
 # for one file :
 # advantages:
 # read much faster the csv file - also saves the type of the original variable
@@ -21,5 +19,5 @@ def calculate_average_time_one_file(parquet_file_name):
     return avg_time.to_dict()
 def convert_to_hour(date_series):
     return date_series.dt.floor("h").dt.strftime("%d/%m/%Y %H:00")
-#part 1
+#part 4
 print(calculate_average_time_one_file("time_series.parquet"))
